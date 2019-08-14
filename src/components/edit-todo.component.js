@@ -64,9 +64,12 @@ export default class EditTodo extends React.Component{
             todo_completed: this.state.todo_completed
         };
         console.log(newTodo);
-        axios.post("http://localhost:4000/todos/update/" + this.props.match.params.id, newTodo).then(res => console.log(res.data));
+        axios.post("http://localhost:4000/todos/update/" + this.props.match.params.id, newTodo).then((res) =>{
+                console.log(res.data);
+                this.props.history.push("/"); 
+            });
 
-        this.props.history.push("/");
+        
     }
 
     render(){
