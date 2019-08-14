@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Todo = (props) =>{
     return(
-        <tr>
+        <tr className={props.className}>
             <td>{props.todo.todo_description}</td>
             <td>{props.todo.todo_responsible}</td>
             <td>{props.todo.todo_priority}</td>
@@ -33,7 +33,7 @@ export default class TodosList extends React.Component{
 
     todoList(){
         return this.state.todos.map((currentTodo, i) =>{
-            return <Todo todo={currentTodo} key={i} />;
+            return <Todo todo={currentTodo} key={i} className={currentTodo.todo_completed ? "completed" : ""} />;
         })
     }
 
