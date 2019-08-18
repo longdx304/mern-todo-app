@@ -12,7 +12,7 @@ import logo from "./logo.svg";
 class App extends React.Component{
   render() {
     return(
-      <Router>
+      <Router basename={'/mern-todo'}>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="https://codingthesmartway.com" target="_blank" rel="noopener noreferrer">
